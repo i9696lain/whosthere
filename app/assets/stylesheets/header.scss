@@ -1,0 +1,96 @@
+@import "variables";
+
+header {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  background-color:$color-background-dark;
+  z-index: 1;
+}
+
+.header-logo {
+  float: left;
+  padding-left: 20px;
+  line-height: 50px;
+  a {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+.global-nav {
+  position: fixed;
+  right: -320px; /* これで隠れる */
+  top: 0;
+  width: 300px; /* スマホに収まるくらい */
+  padding-top: 50px;
+  background-color: $color-background-dark;
+  transition: all .6s;
+  z-index: 2;
+}
+
+.global-nav ul  {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  a {
+    display: block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color:white;
+    border-top: solid 2px $color-base;
+    &:hover{
+      background-color: lighten($color-background-dark, 20%);
+    }
+  }
+}
+
+.hamburger {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 3;
+  span {
+    position: absolute;
+    left: 11px;
+    width: 18px;
+    height: 2px;
+    background-color: white;
+    transition: all .6s;
+  }
+  .hamburger_line1 {
+    top: 14px;
+  }
+  .hamburger_line2 {
+    top: 20px;
+  }
+  .hamburger_line3 {
+    top: 26px;
+  }
+}
+
+/* 表示用 */
+.nav-open{
+  .global-nav {
+    right: 0;
+  }
+  .hamburger_line1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .hamburger_line2 {
+    width: 0;
+    left: 50%;
+  }
+  .hamburger_line3 {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
+}
+
