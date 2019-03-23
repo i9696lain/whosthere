@@ -1,7 +1,7 @@
 @import "variables";
 
 header {
-  position: relative;
+  position: fixed;
   left: 0px;
   top: 0px;
   height: 50px;
@@ -15,7 +15,7 @@ header {
   padding-left: 20px;
   line-height: 50px;
   a {
-    color: white;
+    color: $color-text-light;
     font-size: 22px;
     font-weight: bold;
   }
@@ -27,7 +27,6 @@ header {
   top: 0;
   width: 300px; /* スマホに収まるくらい */
   padding-top: 50px;
-  background-color: $color-background-dark;
   transition: all .6s;
   z-index: 2;
 }
@@ -36,11 +35,12 @@ header {
   margin: 0;
   padding: 0;
   list-style: none;
+  background-color: $color-background-dark;
   a {
     display: block;
     padding: 8px 14px;
     text-decoration: none;
-    color:white;
+    color:$color-text-light;
     border-top: solid 2px $color-base;
     &:hover{
       background-color: lighten($color-background-dark, 20%);
@@ -61,7 +61,7 @@ header {
     left: 11px;
     width: 18px;
     height: 2px;
-    background-color: white;
+    background-color: $color-text-light;
     transition: all .6s;
   }
   .hamburger_line1 {
