@@ -1,13 +1,12 @@
 <div class="container">
-  <section class="center">
+  <section>
     <h1>I'm Here</h1>
     <p class="message">いるか、いないか<br>知りたいのはそれだけ</p>
   </section>
-  <section class="home-img">
-    <%= image_tag('sample.jpg',width: '100%', hight: 'auto') %>
+  <section class="room-img">
   </section>
-  <section class="center">
-    <%= button_to("Create Room", {controller: 'static_pages', action: "home" }, { method: :get })%>
-    <%= button_to("Try Demo", {controller: 'static_pages', action: "home" }, { method: :get })%>
+  <section>
+    <%= link_to("Create Room", new_room_path , class: 'btn') %>
+    <%= link_to("Try Demo", "#" , class: 'btn') %>
   </section>
 </div>

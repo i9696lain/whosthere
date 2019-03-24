@@ -1,0 +1,21 @@
+<div class="container">
+  <section>
+    <h1><%= @room.name %></h1>
+    <p class="message"><%= pluralize(3, "people") %> here.</p>
+  </section>
+  <section class="room-img"></section>
+  <section>
+    <h2>Activity</h2>
+    <div class="activity">
+      <ol>
+        <% 5.times do %>
+        <li>
+          <%= image_tag("user_sample.jpg", size: "50x50") %>
+          <span >Gawain Enter the room.</span>
+          <span>5 hours ago.</span>
+        </li>
+        <% end %>
+      </ol>
+    </div>
+  </section>
+</div>
