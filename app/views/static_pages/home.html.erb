@@ -7,11 +7,7 @@
     <%= image_tag('sample.jpg',width: '100%', hight: 'auto') %>
   </section>
   <section class="center">
-    <button>
-      Create Room
-    </button>
-    <button>
-      Try Demo
-    </button>
+    <%= button_to("Create Room", {controller: 'static_pages', action: "home" }, { method: :get })%>
+    <%= button_to("Try Demo", {controller: 'static_pages', action: "home" }, { method: :get })%>
   </section>
 </div>
