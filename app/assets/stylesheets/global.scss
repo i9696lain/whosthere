@@ -1,5 +1,6 @@
 @import "variables";
 
+
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -8,6 +9,7 @@ html {
 
 body {
   margin: 0;
+  background-color: $color-base;
 }
 
 a {
@@ -19,6 +21,10 @@ h1, h2, h3, h4, h5, h6, p {
   color: $color-text-dark;
 }
 
+h1 {
+  text-align: center;
+}
+
 .container {
   max-width: 600px;
   min-height: calc(100vh - 80px); // 100% - (header.height+footer-height)px
@@ -28,10 +34,18 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 section {
+  box-sizing: border-box;
   width: 100%;
   margin: 30px auto 0 auto;
-  &.center {
-    text-align: center;
+  padding: 0 20px ;
+
+  &.room-img {
+    min-height: 250px;
+    background: #666 image-url('room_sample.jpg') no-repeat center;
+    background-size: cover;
+    z-index: 0;
+    //TODO:子要素もグレースケール聞くので死ぬ
+    filter: grayscale(80%);
   }
 }
 
@@ -45,11 +59,12 @@ section {
 .message {
   font-size: large;
   margin: 5px;
+  text-align: center;
 }
 
 // button
 
-.button_to input[type="submit"] {
+.btn {
   display: block;
   top: 0px;
   margin: 10px auto;
@@ -71,12 +86,12 @@ section {
   transition: .2s all;
 }
 
-.button_to input[type="submit"]:hover {
+.btn:hover {
   top: 0px;
   background-color: lighten($color-background-dark, 20%);
 }
 
-.button_to input[type="submit"]:active {
+.btn:active {
   top: 5px;
   background-color: lighten($color-background-dark, 20%);
 }
@@ -98,3 +113,27 @@ section {
 // button[hidden] {
 //   display: none;
 // }
+
+// Activity
+
+.activity ol {
+  margin-top: 0;
+  margin-bottom: 10px;;
+  padding: 0;
+  list-style: none;
+  background-color: $color-background-light;
+  li {
+    padding: 10px 0px;
+    border-bottom: solid 2px $color-base;
+    img {
+      margin: 0px 10px;
+        vertical-align: middle;
+        float: left;
+        border-radius: 5px;
+        border: 0;
+    }
+    span {
+      display: block;
+    }
+  }
+}

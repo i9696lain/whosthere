@@ -1,0 +1,19 @@
+<div class="container">
+  <section>
+    <h1>New Room</h1>
+
+    <%= form_for(@room, url: rooms_path ) do |f| %>
+ 
+    <%= f.label ":name", "Room's Name" %>
+    <%= f.text_field :name, class: 'form-control' %>
+  
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password, class: 'form-control' %>
+  
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  
+    <%= f.submit "Create Room", class: "btn" %>
+  <% end %>
+  </section>
+</div>
