@@ -1,0 +1,9 @@
+<% provide(:form_url, room_user_path(@user.id) ) %>
+<% provide(:button_text, 'Save changes') %>
+
+<div class="container">
+  <section>
+    <h1>Edit User</h1>
+    <%= render 'form' %>
+  </section>
+</div>

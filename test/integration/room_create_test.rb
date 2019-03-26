@@ -2,9 +2,6 @@ require 'test_helper'
 
 class RoomCreateTest < ActionDispatch::IntegrationTest
 
-  def setup
-  end
-
   test "valid create room" do
     get new_room_path
     assert_select "form[action=?]", rooms_path
