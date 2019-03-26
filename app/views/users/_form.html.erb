@@ -1,0 +1,9 @@
+<%= form_for(@user, url: yield(:form_url) ) do |f| %>
+
+  <%= f.label ":name", "User Name" %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <!-- hidden_field_tag :room_id, @room.id -->
+
+  <%= f.submit yield(:button_text), class: "btn" %>
+<% end %>

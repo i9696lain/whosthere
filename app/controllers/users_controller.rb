@@ -12,17 +12,29 @@ class UsersController < ApplicationController
   def create
     @user = @room.users.build(user_params)
     if @user.save
-      redirect_to @room
+      redirect_to room_users_path(@room)
     else
       render 'users/new'
     end
   end
 
   def edit
+    @user = User.find(params[:user_id])
   end
 
-
   def update
+    @user = User.find(params[:user_id])
+    if @user.update_attributes(user_params)
+      redirect_to room_users_path(@user.room_id)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    user = User.find(params[:user_id])
+    user.destroy
+    redirect_to room_users_path(user.room_id)
   end
 
   private

@@ -1,13 +1,9 @@
+<% provide(:form_url, room_users_path(@room.id) ) %>
+<% provide(:button_text, 'Add User') %>
+
 <div class="container">
   <section>
     <h1>New User</h1>
-
-    <%= form_for(@user, url: room_users_path ) do |f| %>
-
-    <%= f.label ":name", "User Name" %>
-    <%= f.text_field :name, class: 'form-control' %>
-
-    <%= f.submit "Add User", class: "btn" %>
-  <% end %>
+    <%= render 'form' %>
   </section>
 </div>
