@@ -3,3 +3,7 @@
 roundtable:
   name: Round Table
   password_digest: password
+
+seraph:
+  name: SE.RA.PH
+  password_digest: password
