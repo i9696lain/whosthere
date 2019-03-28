@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
   root   'static_pages#home'
 
+  patch  '/rooms/:room_id/users/:user_id/enter', to: 'users#enter', as: 'enter_room_user'
+  patch  '/rooms/:room_id/users/:user_id/leave', to: 'users#leave', as: 'leave_room_user'
+
   resources :rooms , only: [:create,:new,:edit,:show,:update,:destroy] do
-    resources :users, param: :user_id, only: [:index,:create,:new,:edit,:update,:destroy]
+    resources :users, param: :user_id, only: [:index,:create,:new,:edit,:update,:destroy,:enter,:leave]
   end
 
 end

@@ -27,4 +27,11 @@ class UserTest < ActiveSupport::TestCase
     assert     otherroom_user.valid?
   end
 
+  test "should success enter/leave" do
+    assert_not @user.is_staying
+    @user.enter
+    assert     @user.reload.is_staying
+    @user.leave
+    assert_not @user.reload.is_staying
+  end
 end

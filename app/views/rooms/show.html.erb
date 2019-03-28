@@ -1,7 +1,7 @@
 <div class="container">
   <section>
     <h1><%= @room.name %></h1>
-    <p class="message"><%= pluralize(3, "people") %> here.</p>
+    <p class="message"><%= pluralize(@room.users.where(is_staying: true).count, "person") %> here.</p>
   </section>
   <section class="room-img">
     <%= link_to("Member Setting", room_users_path(@room.id) , class: 'btn') %>
