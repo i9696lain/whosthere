@@ -12,6 +12,7 @@ class RoomCreateTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'rooms/show'
+    assert is_logged_in?
   end
 
   test "invalid create room" do

@@ -4,10 +4,12 @@
   </div>
   <nav class="global-nav">
     <ul>
-      <li><%= link_to "Share Room Link",  "#" %></li>
-      <li><%= link_to "Member Setting",   "#" %></li>
-      <li><%= link_to "Room Setting",     "#" %></li>
-      <li><%= link_to "Feedback",         "#" %></li>
+      <% if logged_in? %>
+        <li><%= link_to "Share Room Link",  "#" %></li>
+        <li><%= link_to "Member Setting",   room_users_path(current_room) %></li>
+        <li><%= link_to "Room Setting",     edit_room_path(current_room) %></li>
+      <% end %>
+        <li><%= link_to "Feedback",         "#" %></li>
     </ul>
   </nav>
   <div class="hamburger" id="js-hamburger">
