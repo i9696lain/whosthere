@@ -12,11 +12,13 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
+    log_in(@room)
     get edit_room_url(@room.id)
     assert_response :success
   end
 
   test "should get show" do
+    log_in(@room)
     get room_url(@room.id)
     assert_response :success
   end

@@ -8,6 +8,8 @@
         <li><%= link_to "Share Room Link",  "#" %></li>
         <li><%= link_to "Member Setting",   room_users_path(current_room) %></li>
         <li><%= link_to "Room Setting",     edit_room_path(current_room) %></li>
+        <li><%= link_to "Log out",          room_logout_path(current_room),
+                                            method: :delete %></li>
       <% end %>
         <li><%= link_to "Feedback",         "#" %></li>
     </ul>

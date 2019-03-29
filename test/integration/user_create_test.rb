@@ -7,6 +7,7 @@ class UserCreateTest < ActionDispatch::IntegrationTest
   end
 
   test "valid create user" do
+    log_in(@room)
     get new_room_user_path(@room)
     assert_select "form[action=?]", room_users_path(@room)
     assert_difference 'User.count', 1 do
@@ -17,7 +18,12 @@ class UserCreateTest < ActionDispatch::IntegrationTest
   end
 
   test "invalid create user" do
+    # 未ログイン
     get new_room_user_path(@room.id)
+    assert_redirected_to room_login_path(@room)
+    log_in(@room)
+    get new_room_user_path(@room)
+    assert_template 'users/new'
     # 無記名
     assert_no_difference 'User.count' do
       post room_users_path(@room.id), params: { user: { name: "" } }
