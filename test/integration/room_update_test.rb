@@ -7,6 +7,7 @@ class RoomUpdateTest < ActionDispatch::IntegrationTest
   end
 
   test "valid update room" do
+    log_in(@room)
     get edit_room_path(@room)
     name = "Round Table"
     patch room_path(@room), params: { room: { name: name,
@@ -16,6 +17,7 @@ class RoomUpdateTest < ActionDispatch::IntegrationTest
   end
 
   test "invalid update room" do
+    log_in(@room)
     get edit_room_path(@room)
     patch room_path(@room), params: { room: { name: @room.name,
                                               password: "password",
