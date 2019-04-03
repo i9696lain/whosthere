@@ -1,3 +1,5 @@
+document.getElementById("count").innerHTML= "<%= pluralize(@room.users.where(is_staying: true).count, 'person') %> here."
+
 var img = document.getElementById( "user_<%= @user.id %>" )
 img.classList.remove("is_staying")
 img.classList.add("not_staying")

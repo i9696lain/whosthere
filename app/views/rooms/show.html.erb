@@ -1,7 +1,7 @@
 <div class="container">
   <section>
     <h1><%= @room.name %></h1>
-    <p class="message"><%= pluralize(@room.users.where(is_staying: true).count, "person") %> here.</p>
+    <p class="message" id="count"><%= pluralize(@room.users.where(is_staying: true).count, "person") %> here.</p>
   </section>
   <section class="room-img">
     <% unless @room.users.count %>
