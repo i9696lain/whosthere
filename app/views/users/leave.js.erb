@@ -1,0 +1,6 @@
+var img = document.getElementById( "user_<%= @user.id %>" )
+img.classList.remove("is_staying")
+img.classList.add("not_staying")
+var form = document.getElementById( "edit_user_<%= @user.id %>" )
+form.action = "<%= enter_room_user_path(@user.room_id, @user.id) %>"
+alert('いってらっしゃい')

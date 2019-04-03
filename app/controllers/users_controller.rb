@@ -37,12 +37,18 @@ class UsersController < ApplicationController
 
   def enter
     @user.enter
-    redirect_to room_path(@user.room_id)
+    respond_to do |format|
+      format.html { redirect_to room_path(@user.room_id) }
+      format.js
+    end
   end
 
   def leave
     @user.leave
-    redirect_to room_path(@user.room_id)
+    respond_to do |format|
+      format.html { redirect_to room_path(@user.room_id) }
+      format.js
+    end
   end
 
   private
