@@ -5,6 +5,23 @@ require 'rails/test_help'
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+  include ApplicationHelper
 
-  # Add more helper methods to be used by all tests here...
+  # roomにログイン中ならtrueを返す
+  def is_logged_in?
+    !session[:room_id].nil?
+  end
+
+  def log_in(room)
+    session[:room_id] = room.id
+  end
+
+end
+
+class ActionDispatch::IntegrationTest
+
+  def log_in(room, password: 'password')
+    post room_login_path(room), params: { session: { password: password } }
+  end
+
 end

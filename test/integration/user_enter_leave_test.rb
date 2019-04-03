@@ -8,6 +8,7 @@ class UserEnterLeaveTest < ActionDispatch::IntegrationTest
   end
 
   test "should be enter/leave" do
+    log_in(@user.room_id)
     get room_path(@room)
     assert_match  "0 people here.", response.body
     patch enter_room_user_path(@room.id,@user.id)
