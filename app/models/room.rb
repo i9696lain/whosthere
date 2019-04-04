@@ -1,6 +1,7 @@
 class Room < ApplicationRecord
   has_secure_password
   has_many  :users
+  has_many  :activities
   validates :name,     presence: true
   validates :password, presence: true,
                        length: { minimum: 8},

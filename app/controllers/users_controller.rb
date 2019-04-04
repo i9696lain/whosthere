@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def enter
     @user.enter
+    @user.activities.create(room_id: @user.room_id, action: 1)
     respond_to do |format|
       format.html { redirect_to room_path(@user.room_id) }
       format.js
@@ -45,6 +46,7 @@ class UsersController < ApplicationController
 
   def leave
     @user.leave
+    @user.activities.create(room_id: @user.room_id, action: 2)
     respond_to do |format|
       format.html { redirect_to room_path(@user.room_id) }
       format.js
