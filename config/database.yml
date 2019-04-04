@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: iamhere_development
+  database: whosthere_development
 
 test:
   <<: *default
-  database: iamhere_test
+  database: whosthere_test
 
 production:
   <<: *default
