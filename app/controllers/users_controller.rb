@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_room, only: [:index,:create,:new,:edit,:uupdate,:destroy]
-  before_action :set_user, only: [:edit,:update,:destroy]
+  before_action :set_room, only: [:index,:create,:new,:edit,:update,:destroy,:enter,:leave]
+  before_action :set_user, only: [:edit,:update,:destroy,:enter,:leave]
 
   def index
     @users = @room.users
@@ -35,11 +35,31 @@ class UsersController < ApplicationController
     redirect_to room_users_path(@user.room_id)
   end
 
+  def enter
+    @user.enter
+    respond_to do |format|
+      format.html { redirect_to room_path(@user.room_id) }
+      format.js
+    end
+  end
+
+  def leave
+    @user.leave
+    respond_to do |format|
+      format.html { redirect_to room_path(@user.room_id) }
+      format.js
+    end
+  end
+
   private
 
     def set_room
       @room = Room.find(params[:room_id])
       redirect_to(room_login_url(@room)) unless current_room?(@room)
+    end
+
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     def set_user

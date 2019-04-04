@@ -1,0 +1,10 @@
+form.staying {
+  display:inline-flex;
+}
+
+.not_staying {
+  filter: grayscale(100%);
+  filter: brightness(70%);
+  width: 65px;
+  height: 65px;
+}

@@ -1,4 +1,4 @@
-<% provide(:form_url, room_user_path(@user.id) ) %>
+<% provide(:form_url, room_user_path(@user.room_id,@user.id) ) %>
 <% provide(:button_text, 'Save changes') %>
 
 <div class="container">

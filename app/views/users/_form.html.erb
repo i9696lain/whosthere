@@ -1,4 +1,4 @@
-<%= form_for(@user, url: yield(:form_url) ) do |f| %>
+<%= form_for(@user, url: yield(:form_url), html: {class:'user'} ) do |f| %>
 
   <%= f.label ":name", "User Name" %>
   <%= f.text_field :name, class: 'form-control' %>

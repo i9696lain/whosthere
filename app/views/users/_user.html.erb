@@ -1,1 +1,9 @@
-<%= image_tag("user_sample.jpg", size: "65x65", alt: user.name) %>
+<% if user.is_staying %>
+  <%= form_for( user, url: leave_room_user_path(user.room_id, user.id), html: {class: 'staying' }, remote: true) do |f| %>
+    <%= image_submit_tag("user_sample.jpg", alt: user.name, class: "is_staying", id: "user_"+user.id.to_s, width: "65px", height: "65px") %>
+  <% end %>
+<% else %>
+  <%= form_for( user, url: enter_room_user_path(user.room_id, user.id), html: {class: 'staying' }, remote: true) do |f| %>
+    <%= image_submit_tag("user_sample.jpg", alt: user.name, class: "not_staying", id: "user_"+user.id.to_s, width: "65px", height: "65px") %>
+  <% end %>
+<% end %>

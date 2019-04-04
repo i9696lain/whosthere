@@ -1,0 +1,10 @@
+document.getElementById("count").innerHTML= "<%= pluralize(@room.users.where(is_staying: true).count, 'person') %> here."
+
+var img = document.getElementById( "user_<%= @user.id %>" )
+img.classList.remove("not_staying")
+img.classList.add("is_staying")
+document.getElementById( "edit_user_<%= @user.id %>" ).action = "<%= leave_room_user_path(@user.room_id, @user.id) %>"
+
+iziToast.show({
+  message: 'おかえりなさい'
+})

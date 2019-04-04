@@ -1,6 +1,7 @@
 @import "variables";
 
-form {
+form.room,
+form.user {
   background-color:$color-background-light;
   margin-top: 10px;
   padding: 10px 20px;
