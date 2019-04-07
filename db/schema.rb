@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190328055736) do
+ActiveRecord::Schema.define(version: 20190404081146) do
+
+  create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "room_id"
+    t.bigint "user_id"
+    t.integer "action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id", "created_at"], name: "index_activities_on_room_id_and_created_at"
+    t.index ["room_id"], name: "index_activities_on_room_id"
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
 
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -28,5 +39,7 @@ ActiveRecord::Schema.define(version: 20190328055736) do
     t.index ["room_id"], name: "index_users_on_room_id"
   end
 
+  add_foreign_key "activities", "rooms"
+  add_foreign_key "activities", "users"
   add_foreign_key "users", "rooms"
 end

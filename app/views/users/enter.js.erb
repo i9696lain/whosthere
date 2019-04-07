@@ -8,3 +8,5 @@ document.getElementById( "edit_user_<%= @user.id %>" ).action = "<%= leave_room_
 iziToast.show({
   message: 'おかえりなさい'
 })
+
+document.getElementById("activities_ul").innerHTML = "<%= escape_javascript(render(@room.activities[0..9])) %>"

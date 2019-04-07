@@ -11,12 +11,21 @@ class UserEnterLeaveTest < ActionDispatch::IntegrationTest
     log_in(@user.room_id)
     get room_path(@room)
     assert_match  "0 people here.", response.body
-    patch enter_room_user_path(@room.id,@user.id)
+
+    # enter
+    assert_difference '@room.activities.where(action:1).count', 1 do
+      patch enter_room_user_path(@room.id,@user.id)
+    end
     follow_redirect!
     assert        @user.reload.is_staying
     assert_select 'input.is_staying', 1
     assert_match  "1 person here.", response.body
-    patch leave_room_user_path(@room.id,@user.id)
+
+    # leave
+    # assert_difference 'Activity.count', 1 do
+    assert_difference '@room.activities.where(action:2).count', 1 do
+      patch leave_room_user_path(@room.id,@user.id)
+    end
     follow_redirect!
     assert_not    @user.reload.is_staying
     assert_match  "0 people here.", response.body

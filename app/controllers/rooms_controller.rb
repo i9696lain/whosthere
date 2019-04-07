@@ -6,7 +6,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @users = @room.users
   end
 
   def create

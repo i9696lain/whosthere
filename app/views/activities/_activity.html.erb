@@ -1,0 +1,10 @@
+<li>
+  <%= image_tag("user_sample.jpg", size: "50x50") %>
+  <% case activity.action %>
+  <% when 1 then %>
+    <span><%= activity.user.name %> enter the room.</span>
+  <% when 2 then %>
+    <span><%= activity.user.name %> leave the room.</span>
+  <% end %>
+  <span><%= time_ago_in_words(activity.created_at) %> ago.</span>
+</li>
