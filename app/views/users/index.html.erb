@@ -6,7 +6,7 @@
     <section>
       <h2>User's</h2>
       <div class="activity">
-        <ol>
+        <ul>
           <% @users.each do | user |%>
           <li>
             <%= image_tag("user_sample.jpg", size: "50x50") %>
@@ -19,7 +19,7 @@
             </span>
           </li>
           <% end %>
-        </ol>
+        </ul>
       </div>
     </section>
   </div>
