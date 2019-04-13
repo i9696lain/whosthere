@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190404081146) do
+ActiveRecord::Schema.define(version: 20190413063246) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "room_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20190404081146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_staying", default: false
+    t.text "avatar_data"
     t.index ["room_id"], name: "index_users_on_room_id"
   end
 
