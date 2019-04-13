@@ -9,7 +9,7 @@
         <ul>
           <% @users.each do | user |%>
           <li>
-            <%= image_tag("user_sample.jpg", size: "50x50") %>
+            <%= avatar_imgtag(user) %>
             <span ><%= user.name %></span>
             <span>
               <%= link_to "edit", edit_room_user_path(@room.id,user.id) %>
