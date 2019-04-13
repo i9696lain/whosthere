@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include ImageUploader[:avatar]
+
   belongs_to :room
   has_many  :activities
   validates :room_id, presence: true

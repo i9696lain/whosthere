@@ -3,6 +3,9 @@
   <%= f.label ":name", "User Name" %>
   <%= f.text_field :name, class: 'form-control' %>
 
+  <%= f.label :avatar_data, "Avatar" %>
+  <%= f.hidden_field :avatar, value: @user.cached_avatar_data %>
+  <%= f.file_field :avatar %>
   <!-- hidden_field_tag :room_id, @room.id -->
 
   <%= f.submit yield(:button_text), class: "btn" %>
