@@ -1,6 +1,9 @@
-<div class="container">
-  <section>
+<main>
+  <div class="container">
     <h1>Login</h1>
+    <!-- TODO: Login -> Room.name -->
+  </div>
+  <div class="container form">
     <%= form_for(:session, url: room_login_path ) do |f| %>
 
       <%= f.label ":password", "Password" %>
@@ -8,5 +11,5 @@
 
       <%= f.submit "login", class: "btn" %>
     <% end %>
-  </section>
-</div>
+  </div>
+</main>

@@ -1,9 +1,10 @@
 <% provide(:form_url, room_users_path(@room.id) ) %>
 <% provide(:button_text, 'Add User') %>
-
-<div class="container">
-  <section>
+<main>
+  <div class="container">
     <h1>New User</h1>
+  </div>
+  <div class="container form">
     <%= render 'form' %>
-  </section>
-</div>
+  </div>
+</main>

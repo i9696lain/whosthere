@@ -1,26 +1,23 @@
-<div class="container">
-    <section>
-      <h1><%= @room.name %></h1>
-      <%= link_to("Add Member", new_room_user_path(@room.id) , class: 'btn') %>
-    </section>
-    <section>
-      <h2>User's</h2>
-      <div class="activity">
-        <ul>
-          <% @users.each do | user |%>
-          <li>
-            <%= avatar_imgtag(user) %>
-            <span ><%= user.name %></span>
-            <span>
-              <%= link_to "edit", edit_room_user_path(@room.id,user.id) %>
-               | 
-              <%= link_to "delete", room_user_path(@room.id,user.id), method: :delete,
-                                        data: { confirm: "You sure?" }%>
-            </span>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </section>
+<main>
+  <div class="container">
+    <h1><%= @room.name %></h1>
+    <%= link_to("Add Member", new_room_user_path(@room.id) , class: 'btn') %>
   </div>
-  
+  <div class="container users">
+    <h2>User's</h2>
+    <ul>
+      <% @users.each do | user |%>
+      <li>
+        <%= avatar_imgtag(user) %>
+        <span ><%= user.name %></span>
+        <span>
+          <%= link_to "edit", edit_room_user_path(@room.id,user.id) %>
+           | 
+          <%= link_to "delete", room_user_path(@room.id,user.id), method: :delete,
+                                    data: { confirm: "You sure?" }%>
+        </span>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</main>

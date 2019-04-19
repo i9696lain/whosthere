@@ -1,20 +1,19 @@
-<div class="container">
-  <section>
+<main>
+  <div class="container">
     <h1><%= @room.name %></h1>
     <p class="message" id="count"><%= pluralize(@room.users.where(is_staying: true).count, "person") %> here.</p>
-  </section>
-  <section class="room-img">
+  </div>
+  <div class="container room">
     <% unless @room.users.count %>
       <%= link_to("Member Setting", room_users_path(@room.id) , class: 'btn') %>
     <% end %>
     <%= render @room.users %>
-  </section>
-  <section>
+  </div>
+  <div class="container activity">
     <h2>Activity</h2>
-    <div class="activity">
-      <ul id="activities_ul">
-        <%= render @room.activities[0..9] %>
-      </ul>
+    <ul id="activities_ul">
+      <%= render @room.activities[0..9] %>
+    </ul>
     </div>
-  </section>
-</div>
+  </div>
+</main>
