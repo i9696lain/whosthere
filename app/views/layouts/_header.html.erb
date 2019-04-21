@@ -5,7 +5,7 @@
   <nav class="header-nav">
     <ul>
       <% if logged_in? %>
-        <li><%= link_to "Share Room Link",  "#" %></li>
+        <li><%= link_to "Share Room Link",  'javascript:ShareLinkWindow("'+ room_url(current_room) +'")' %></li>
         <li><%= link_to "Room Top",         room_path(current_room) %></li>
         <li><%= link_to "Member Setting",   room_users_path(current_room) %></li>
         <li><%= link_to "Room Setting",     edit_room_path(current_room) %></li>
