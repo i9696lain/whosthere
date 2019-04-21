@@ -18,7 +18,7 @@ class UserEnterLeaveTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert        @user.reload.is_staying
-    assert_select 'input.is_staying', 1
+    assert_select 'input.not_staying', @room.users.count - 1
     assert_match  "1 person here.", response.body
 
     # leave
