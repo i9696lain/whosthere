@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to room_users_path(@user.room_id)
+      redirect_to room_users_path(@user.room)
     else
       render 'edit'
     end
@@ -32,23 +32,23 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to room_users_path(@user.room_id)
+    redirect_to room_users_path(@user.room)
   end
 
   def enter
     @user.enter
-    @user.activities.create(room_id: @user.room_id, action: 1)
+    @user.activities.create(room_id: @user.room.id, action: 1)
     respond_to do |format|
-      format.html { redirect_to room_path(@user.room_id) }
+      format.html { redirect_to room_path(@user.room) }
       format.js
     end
   end
 
   def leave
     @user.leave
-    @user.activities.create(room_id: @user.room_id, action: 2)
+    @user.activities.create(room_id: @user.room.id, action: 2)
     respond_to do |format|
-      format.html { redirect_to room_path(@user.room_id) }
+      format.html { redirect_to room_path(@user.room) }
       format.js
     end
   end

@@ -19,19 +19,19 @@ class UserCreateTest < ActionDispatch::IntegrationTest
 
   test "invalid create user" do
     # 未ログイン
-    get new_room_user_path(@room.id)
+    get new_room_user_path(@room)
     assert_redirected_to room_login_path(@room)
     log_in(@room)
     get new_room_user_path(@room)
     assert_template 'users/new'
     # 無記名
     assert_no_difference 'User.count' do
-      post room_users_path(@room.id), params: { user: { name: "" } }
+      post room_users_path(@room), params: { user: { name: "" } }
     end
     # 同名
-    post room_users_path(@room.id), params: { user: { name: "Example User" } }
+    post room_users_path(@room), params: { user: { name: "Example User" } }
     assert_no_difference 'User.count' do
-      post room_users_path(@room.id), params: { user: { name: "Example User" } }
+      post room_users_path(@room), params: { user: { name: "Example User" } }
     end
   end
 end
