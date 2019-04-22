@@ -10,9 +10,10 @@ module UsersHelper
   end
 
   # ユーザのAvatar画像のimgタグを返す
-  def avatar_imgtag(user, class: "avatar")
+  def avatar_imgtag(user, class_name: '')
+    class_name += " avatar"
     src = user.avatar_data.nil? ? 'user_sample.jpg' : user.avatar[:small].url
-    image_tag(src, size: "50x50")
+    image_tag(src, class: class_name, size: "50x50")
   end
 
 end

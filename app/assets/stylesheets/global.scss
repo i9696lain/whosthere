@@ -1,5 +1,14 @@
 @import "variables";
 
+/************************
+  Global
+************************/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
 
 html {
   font-family: sans-serif; /* 1 */
@@ -8,7 +17,6 @@ html {
 }
 
 body {
-  margin: 0;
   background-color: $color-base;
 }
 
@@ -17,7 +25,6 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
   color: $color-text-dark;
 }
 
@@ -25,45 +32,137 @@ h1 {
   text-align: center;
 }
 
-.container {
-  max-width: 600px;
-  min-height: calc(100vh - 80px); // 100% - (header.height+footer-height)px
-  clear: both;
-  margin: 0 auto;
-  padding-top: 50px; // header.height
+h2 {
+  padding-left: 20px;
+  margin-bottom: 10px;
 }
 
-section {
-  box-sizing: border-box;
-  width: 100%;
-  margin: 30px auto 0 auto;
-  padding: 0 20px ;
+/************************
+  Header
+************************/
 
-  &.room-img {
-    min-height: 250px;
-    background: #666 image-url('room_sample.jpg') no-repeat center;
-    background-size: cover;
-    z-index: 0;
-    //TODO:子要素もグレースケール聞くので死ぬ
-    filter: grayscale(80%);
+header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  background-color:$color-background-dark;
+  z-index: 1;
+}
+
+.header-logo {
+  float: left;
+  padding-left: 20px;
+  line-height: 50px;
+  a {
+    color: $color-text-light;
+    font-size: 22px;
+    font-weight: bold;
   }
 }
 
-.home-img img {
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: grayscale(100%);
+/************************
+  Footer
+************************/
+
+footer {
+  height: 30px;
+  width: 100%;
+  background-color:$color-background-light;
+  color: white;
 }
-.message {
+
+/************************
+  Main Container
+************************/
+main {
+  max-width: 600px;
+  min-height: calc(100vh - 30px); // 100% - footer.height
+  margin: auto; 
+  padding: 50px 0 20px; //top=header.height, bottom=20px
+}
+
+div.container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+div.room {
+  min-height: 200px;
+  background: #666 no-repeat center;
+  background-size: cover;
+  position:relative;
+  z-index: 0;
+  //TODO:子要素もグレースケール効くので死ぬ
+  &:before {
+    content: '';
+    background:  image-url('room_sample.jpg') no-repeat center; //inherit;
+    filter: grayscale(80%);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+  form {
+    display:inline-flex;
+  }
+  div.room-members {
+    position: absolute;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+div.form form{
+  padding: 20px 20px 20px;
+  background-color:$color-background-light;
+  label {
+    margin-bottom: 10px;
+    width: 100%;
+    display:block;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="file"] {
+    display:block;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+div.users ul,
+div.activity ul{
+  list-style: none;
+  background-color: $color-background-light;
+  li {
+    padding: 10px 0px;
+    border-bottom: solid 2px $color-base;
+    img {
+      margin: 0px 10px;
+      vertical-align: middle;
+      float: left;
+    }
+    span {
+      display: block;
+    }
+  }
+}
+
+/************************
+  Parts
+************************/
+
+// message
+p.message {
   font-size: large;
-  margin: 5px;
   text-align: center;
 }
 
 // button
-
 .btn {
   display: block;
   top: 0px;
@@ -96,42 +195,35 @@ section {
   background-color: lighten($color-background-dark, 20%);
 }
 
-// button[disabled],
-// button[disabled]:hover,
-// button[disabled]:active {
-//   border: none;
-//   background-image: none;
-//   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-//   filter: alpha(opacity=40);
-//   -khtml-opacity: 0.40;
-//   -moz-opacity: 0.40;
-//   opacity: 0.40;
-//   cursor: not-allowed;
-//   box-shadow: none;
-// }
+.btn-min {
+  background-color: $color-background-dark;
+  color: $color-text-light;
+  margin: 0 2px;
+  border-radius: 2px;
+  border: 0;
+  padding: 2px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
 
-// button[hidden] {
-//   display: none;
-// }
+// form
+input[type="text"],
+input[type="password"] {
+  padding: 0.5em 0.6em;
+  font-size: 0.8em;
+  border: 1px solid $color-background-dark;
+  box-shadow: inset 0 1px 3px $color-background-dark;
+  border-radius: 4px;
+  &:focus {
+    outline: 0;
+    border-color: #129FEA;
+  }
+}
 
-// Activity
-
-.activity ul {
-  margin-top: 0;
-  margin-bottom: 10px;;
-  padding: 0;
-  list-style: none;
-  background-color: $color-background-light;
-  li {
-    padding: 10px 0px;
-    border-bottom: solid 2px $color-base;
-    img {
-      margin: 0px 10px;
-      vertical-align: middle;
-      float: left;
-    }
-    span {
-      display: block;
-    }
+// avatar
+.avatar {
+  border-radius: 5px;
+  &.not_staying{
+    filter: brightness(70%);
   }
 }
