@@ -3,7 +3,9 @@
 gawain:
   name: Gawain
   room: roundtable
+  url_token: <%= SecureRandom.hex(10) %>
 
 tamamo:
   name: Tamamo
   room: seraph
+  url_token: <%= SecureRandom.hex(10) %>

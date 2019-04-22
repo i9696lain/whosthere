@@ -61,11 +61,7 @@ class UsersController < ApplicationController
     end
 
     def set_user
-      @user = User.find(params[:user_id])
-    end
-
-    def set_user
-      @user = User.find(params[:user_id])
+      @user = User.find_by(url_token: params[:user_url_token])
     end
 
     def user_params

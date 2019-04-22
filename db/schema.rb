@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190422063310) do
+ActiveRecord::Schema.define(version: 20190422085602) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "room_id"
@@ -39,7 +39,9 @@ ActiveRecord::Schema.define(version: 20190422063310) do
     t.datetime "updated_at", null: false
     t.boolean "is_staying", default: false
     t.text "avatar_data"
+    t.string "url_token"
     t.index ["room_id"], name: "index_users_on_room_id"
+    t.index ["url_token"], name: "index_users_on_url_token", unique: true
   end
 
   add_foreign_key "activities", "rooms"
