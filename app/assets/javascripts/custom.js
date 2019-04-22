@@ -26,6 +26,7 @@ const ShareLinkWindow = function (url) {
     timeout: false,
     layout: 4,
     overlay: true,
+    close: false,
     displayMode: 'once',
     zindex: 999,
     progressBar: false,
@@ -37,7 +38,9 @@ const ShareLinkWindow = function (url) {
         var copyTarget = document.getElementById("ShareLink");
         copyTarget.select();
         document.execCommand("Copy");
-        console.log("copied : " + url);
+        instance.hide({ transitionOut: 'fadeOut' }, toast);
+      }],
+      ['<button>CANSEL</button>', function (instance, toast) {
         instance.hide({ transitionOut: 'fadeOut' }, toast);
       }],
     ],
