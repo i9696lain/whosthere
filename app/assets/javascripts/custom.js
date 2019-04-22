@@ -1,12 +1,3 @@
-//nav-open
-(function() {
-  const body = document.body;
-  const hamburger = document.getElementById('js-hamburger');
-  hamburger.addEventListener('click', function () {
-    body.classList.toggle('nav-open');
-  });
-}).call(this);
-
 //toast
 const GreetingToast = function (message) {
   iziToast.show({
