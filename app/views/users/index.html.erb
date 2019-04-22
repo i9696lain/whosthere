@@ -9,11 +9,10 @@
       <% @users.each do | user |%>
       <li>
         <%= avatar_imgtag(user) %>
-        <span ><%= user.name %></span>
+        <span><%= user.name %></span>
         <span>
-          <%= link_to "edit", edit_room_user_path(@room.id,user.id) %>
-           | 
-          <%= link_to "delete", room_user_path(@room.id,user.id), method: :delete,
+          <%= link_to "EDIT", edit_room_user_path(@room.id,user.id), class: "btn-min" %>
+          <%= link_to "DELETE", room_user_path(@room.id,user.id), class:"btn-min", method: :delete,
                                     data: { confirm: "You sure?" }%>
         </span>
       </li>

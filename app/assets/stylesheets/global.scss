@@ -195,6 +195,17 @@ p.message {
   background-color: lighten($color-background-dark, 20%);
 }
 
+.btn-min {
+  background-color: $color-background-dark;
+  color: $color-text-light;
+  margin: 0 2px;
+  border-radius: 2px;
+  border: 0;
+  padding: 2px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
 // form
 input[type="text"],
 input[type="password"] {
