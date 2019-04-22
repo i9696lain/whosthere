@@ -21,7 +21,7 @@ end
 class ActionDispatch::IntegrationTest
 
   def log_in(room, password: 'password')
-    post room_login_path(room), params: { session: { password: password } }
+    post room_login_path(room.url_token), params: { session: { password: password } }
   end
 
 end

@@ -1,7 +1,7 @@
 document.getElementById("count").innerHTML= "<%= pluralize(@room.users.where(is_staying: true).count, 'person') %> here."
 
 document.getElementById( "user_<%= @user.id %>" ).classList.add("not_staying")
-document.getElementById( "edit_user_<%= @user.id %>" ).action = "<%= enter_room_user_path(@user.room_id, @user.id) %>"
+document.getElementById( "edit_user_<%= @user.id %>" ).action = "<%= enter_room_user_path(@user.room, @user) %>"
 
 GreetingToast('いってらっしゃい');
 
