@@ -5,7 +5,7 @@
   <div class="container form">
     <%= form_for(@room, url: rooms_path, html: { class: 'room' } ) do |f| %>
  
-    <%= f.label ":name", "Room's Name" %>
+    <%= f.label ":name", "Room Name" %>
     <%= f.text_field :name, class: 'form-control' %>
   
     <%= f.label :password, "Password" %>
@@ -14,7 +14,7 @@
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation, class: 'form-control' %>
   
-    <%= f.submit "Create Room", class: "btn" %>
+    <%= f.submit "CREATE", class: "btn" %>
   <% end %>
 </div>
 </main>

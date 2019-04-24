@@ -1,7 +1,9 @@
 <main>
   <div class="container">
     <h1><%= @room.name %></h1>
-    <p class="message" id="count"><%= pluralize(@room.users.where(is_staying: true).count, "person") %> here.</p>
+    <p class="message" id="count">
+      <%= render 'users/count' %>
+    </p>
   </div>
   <div class="container room">
     <div class="room-members">

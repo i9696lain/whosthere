@@ -1,0 +1,1 @@
+<%= @room.users.where(is_staying: false).count == 0 ? t('rooms.show.staying_message_max') : t('rooms.show.staying_message', count: @room.users.where(is_staying: true).count ) %>

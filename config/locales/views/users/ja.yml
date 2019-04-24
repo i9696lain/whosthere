@@ -1,0 +1,8 @@
+ja:
+  users:
+    enter:
+      message: 'おかえりなさい'
+    leave:
+      message: 'いってらっしゃい'
+    index:
+      confirm: '本当に削除してよろしいですか？'
