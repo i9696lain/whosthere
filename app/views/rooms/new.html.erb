@@ -1,20 +1,10 @@
+<% provide(:form_url, rooms_path ) %>
+<% provide(:button_text, 'CREATE') %>
 <main>
   <div class="container">
     <h1>New Room</h1>
   </div>
   <div class="container form">
-    <%= form_for(@room, url: rooms_path, html: { class: 'room' } ) do |f| %>
- 
-    <%= f.label ":name", "Room Name" %>
-    <%= f.text_field :name, class: 'form-control' %>
-  
-    <%= f.label :password, "Password" %>
-    <%= f.password_field :password, class: 'form-control' %>
-  
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-  
-    <%= f.submit "CREATE", class: "btn" %>
-  <% end %>
-</div>
+    <%= render 'form' %>
+  </div>
 </main>

@@ -1,0 +1,15 @@
+<%= form_for(@room, url: yield(:form_url), html: { class: 'room' }) do |f| %>
+
+  <%= render 'layouts/error_messages', object: f.object %>
+
+  <%= f.label ":name", "Room Name" %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :password, "Password" %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn" %>
+<% end %>

@@ -13,7 +13,7 @@
         <span>
           <%= link_to "EDIT", edit_room_user_path(@room,user), class: "btn-min" %>
           <%= link_to "DELETE", room_user_path(@room,user), class:"btn-min", method: :delete,
-                                    data: { confirm: "You sure?" }%>
+                                    data: { confirm: t('.confirm') }%>
         </span>
       </li>
       <% end %>
