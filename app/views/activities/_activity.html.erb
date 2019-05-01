@@ -2,9 +2,9 @@
   <%= avatar_imgtag(activity.user) %>
   <% case activity.action %>
   <% when 1 then %>
-    <span><%= activity.user.name %> enter the room.</span>
+    <span><%= t('.enter_message', name: activity.user.name) %></span>
   <% when 2 then %>
-    <span><%= activity.user.name %> leave the room.</span>
+    <span><%= t('.leave_message', name: activity.user.name) %></span>
   <% end %>
-  <span><%= time_ago_in_words(activity.created_at) %> ago.</span>
+  <span><small><%= time_ago_in_words(activity.created_at) %><%= t('.ago') %></small></span>
 </li>

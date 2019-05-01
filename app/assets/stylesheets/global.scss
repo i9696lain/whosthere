@@ -134,6 +134,20 @@ div.form form{
   }
 }
 
+div.error_explanation {
+  color: $color-text-error;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    li {
+      margin-top: 5px;
+      font-size: 0.8em;
+    }
+  }
+}
+
 div.users ul,
 div.activity ul{
   list-style: none;
