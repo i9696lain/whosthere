@@ -7,3 +7,6 @@ ja:
       room:     'ルーム設定'
       logout:   'ログアウト'
       feedback: '要望・問題の報告'
+    footer:
+      terms:         '利用規約'
+      privacypolicy: 'プライバシーポリシー'

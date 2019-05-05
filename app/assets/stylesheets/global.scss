@@ -37,6 +37,14 @@ h2 {
   margin-bottom: 10px;
 }
 
+section {
+  padding: 0 20px;
+  p {
+    font-size: 90%;
+    margin-bottom: 10px;
+  }
+}
+
 /************************
   Header
 ************************/
@@ -69,8 +77,13 @@ header {
 footer {
   height: 30px;
   width: 100%;
+  color: $color-text-dark;
   background-color:$color-background-light;
-  color: white;
+  text-align: center;
+  a {
+    color: $color-text-dark;
+    font-size: small;
+  }
 }
 
 /************************
