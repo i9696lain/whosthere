@@ -98,7 +98,7 @@ div.room {
   &:before {
     content: '';
     background:  image-url('room_default.jpg') no-repeat center; //inherit;
-    filter: grayscale(80%);
+    filter: grayscale(80%) brightness(300%);
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -234,10 +234,14 @@ input[type="password"] {
   }
 }
 
+input[type="image"][disabled] {
+  cursor:default;
+}
+
 // avatar
 .avatar {
   border-radius: 5px;
   &.not_staying{
-    filter: brightness(70%);
+    filter: grayscale(100%) brightness(70%);
   }
 }
