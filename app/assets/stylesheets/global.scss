@@ -97,7 +97,7 @@ div.room {
   //TODO:子要素もグレースケール効くので死ぬ
   &:before {
     content: '';
-    background:  image-url('room_sample.jpg') no-repeat center; //inherit;
+    background:  image-url('room_default.jpg') no-repeat center; //inherit;
     filter: grayscale(80%);
     position: absolute;
     z-index: -1;
