@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = @room.users.build(user_params)
+    @user.url_token = SecureRandom.hex(10) 
     if @user.save
       redirect_to room_users_path(@room)
     else

@@ -1,7 +1,7 @@
 class Room < ApplicationRecord
   has_secure_password
-  has_many  :users
-  has_many  :activities
+  has_many  :users,      dependent: :destroy
+  has_many  :activities, dependent: :destroy
   validates :name,     presence: true
   validates :password, presence: true,
                        length: { minimum: 8},

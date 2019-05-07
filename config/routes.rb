@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   root   'static_pages#home'
+  get    '/about',         to: 'static_pages#about'
+  get    '/terms',         to: 'static_pages#terms'
+  get    '/privacypolicy', to: 'static_pages#privacypolicy'
 
   patch  '/rooms/:room_url_token/users/:user_url_token/enter', to: 'users#enter', as: 'enter_room_user'
   patch  '/rooms/:room_url_token/users/:user_url_token/leave', to: 'users#leave', as: 'leave_room_user'
@@ -16,6 +19,9 @@ end
 
 #          Prefix Verb   URI Pattern                                                  Controller#Action
 #            root GET    /                                                            static_pages#home
+#           about GET    /about(.:format)                                             static_pages#about
+#           terms GET    /terms(.:format)                                             static_pages#terms
+#   privacypolicy GET    /privacypolicy(.:format)                                     static_pages#privacypolicy
 # enter_room_user PATCH  /rooms/:room_url_token/users/:user_url_token/enter(.:format) users#enter
 # leave_room_user PATCH  /rooms/:room_url_token/users/:user_url_token/leave(.:format) users#leave
 #      room_login GET    /rooms/:room_url_token/login(.:format)                       sessions#new

@@ -4,9 +4,31 @@
     <p class="message">いるか、いないか<br>知りたいのはそれだけ</p>
   </div>
   <div class='container room'>
+    <div class="room-members">
+      <% 6.times do |n| %>
+        <form>
+          <input disabled type="image" src="<%=asset_url("user_sample#{n}") %>" class="avatar" width="65px" height="65px">
+        </form>
+      <% end %>
+    </div>
   </div>
   <div class='container'>
     <%= link_to("Create Room", new_room_path , class: 'btn') %>
-    <%= link_to("Try Demo", "#" , class: 'btn') %>
   </div>
+  <div class="container">
+    <section>
+      <p>寮で、研究室で、オフィスで・・・・・・ちょいちょい見かける 「在室状況が表示されたアレ」 をWebサービスにしました。
+        <br>出るときにぽちり、入るときにぽちりとすれば、誰が部屋にいるのか一目でわかります。
+      </p>
+      <p align="right"><i class="fas fa-caret-right"></i><%= link_to(" もっとくわしく", about_path) %></p>
+    </section>
 </main>
+<script>
+  function animation() {
+    const avatar = document.getElementsByClassName('avatar');
+    avatar[Math.floor(Math.random()*avatar.length)].classList.toggle('not_staying');
+  }
+  (function () {
+    setInterval(animation,1000);
+  }).call(this);
+</script>
