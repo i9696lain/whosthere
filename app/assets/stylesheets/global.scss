@@ -20,8 +20,9 @@ body {
   background-color: $color-base;
 }
 
-a {
+* > a {
   text-decoration: none;
+  color: inherit;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -63,8 +64,8 @@ header {
   float: left;
   padding-left: 20px;
   line-height: 50px;
+  color: $color-text-light;
   a {
-    color: $color-text-light;
     font-size: 22px;
     font-weight: bold;
   }
@@ -81,7 +82,6 @@ footer {
   background-color:$color-background-light;
   text-align: center;
   a {
-    color: $color-text-dark;
     font-size: small;
   }
 }

@@ -12,6 +12,7 @@
         <li><%= link_to t('.logout'), room_logout_path(current_room),
                                         method: :delete %></li>
       <% end %>
+        <li><%= link_to t('.about'),     about_path %></li>
         <li><%= link_to t('.feedback'), 'javascript:FeedbackWindow()' %></li>
     </ul>
   </nav>

@@ -14,8 +14,14 @@
   </div>
   <div class='container'>
     <%= link_to("Create Room", new_room_path , class: 'btn') %>
-    <%= link_to("Try Demo", "#" , class: 'btn') %>
   </div>
+  <div class="container">
+    <section>
+      <p>寮で、研究室で、オフィスで・・・・・・ちょいちょい見かける 「在室状況が表示されたアレ」 をWebサービスにしました。
+        <br>出るときにぽちり、入るときにぽちりとすれば、誰が部屋にいるのか一目でわかります。
+      </p>
+      <p align="right"><i class="fas fa-caret-right"></i><%= link_to(" もっとくわしく", about_path) %></p>
+    </section>
 </main>
 <script>
   function animation() {
