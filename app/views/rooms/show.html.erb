@@ -2,7 +2,7 @@
   <div class="container">
     <h1><%= @room.name %></h1>
     <p class="message" id="count">
-      <%= render 'users/count' %>
+      <%= staying_user_count(@room) %>
     </p>
   </div>
   <div class="container room">
