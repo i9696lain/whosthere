@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = @room.users.build(user_params)
     @user.url_token = SecureRandom.hex(10) 
     if @user.save
+      @user.activities.create(room_id: @user.room.id, action: 3)
       redirect_to room_users_path(@room)
     else
       render 'users/new'
