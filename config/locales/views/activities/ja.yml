@@ -2,5 +2,6 @@ ja:
   activities:
     activity:
       ago: '前'
-      enter_message: '%{name}さんが入室しました。'
-      leave_message: '%{name}さんが退室しました。'
+      enter_message:  '%{name}さんが入室しました。'
+      leave_message:  '%{name}さんが退室しました。'
+      create_message: '%{name}さんが参加しました。'

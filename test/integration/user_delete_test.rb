@@ -16,7 +16,7 @@ class UserDeleteTest < ActionDispatch::IntegrationTest
     assert_redirected_to room_users_path(@user.room)
   end
 
-  test "invalid update user" do
+  test "invalid destroy user" do
     assert_no_difference 'User.count' do
       delete room_user_path(@user.room,@user)
     end
