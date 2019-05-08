@@ -7,14 +7,12 @@
   </div>
   <div class="container room">
     <div class="room-members">
-      <% unless @room.users.count %>
-        <%= link_to("Member Setting", room_users_path(@room) , class: 'btn') %>
-      <% end %>
+      <%= link_to(t("layouts.header.user"), room_users_path(@room) , class: 'btn') if @room.users.empty? %>
       <%= render @room.users %>
     </div>
   </div>
   <div class="container activity">
-    <h2>Activity</h2>
+    <h2><%= "Activity" unless @room.activities.empty? %></h2>
     <ul id="activities_ul">
       <%= render @room.activities[0..9] %>
     </ul>
