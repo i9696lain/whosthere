@@ -49,3 +49,11 @@ const ShareLinkWindow = function (url) {
     }
   });
 }
+
+// Survicate (www.survicate.com) code
+const FeedbackWindow = function () {
+  document.body.classList.toggle('nav-open');;
+  var opt = { forceDisplay: true };
+  _sva.destroyVisitor(_sva.retarget);
+  _sva.showSurvey('f0c0f94b89400d0f', opt);
+};

@@ -5,14 +5,15 @@
   <nav class="header-nav">
     <ul>
       <% if logged_in? %>
-        <li><%= link_to "Share Room Link",  'javascript:ShareLinkWindow("'+ room_url(current_room) +'")' %></li>
-        <li><%= link_to "Room Top",         room_path(current_room) %></li>
-        <li><%= link_to "Member Setting",   room_users_path(current_room) %></li>
-        <li><%= link_to "Room Setting",     edit_room_path(current_room) %></li>
-        <li><%= link_to "Log out",          room_logout_path(current_room),
-                                            method: :delete %></li>
+        <li><%= link_to t('.share'), 'javascript:ShareLinkWindow("'+ room_url(current_room) +'")' %></li>
+        <li><%= link_to t('.home'),   room_path(current_room) %></li>
+        <li><%= link_to t('.user'),   room_users_path(current_room) %></li>
+        <li><%= link_to t('.room'),   edit_room_path(current_room) %></li>
+        <li><%= link_to t('.logout'), room_logout_path(current_room),
+                                        method: :delete %></li>
       <% end %>
-        <li><%= link_to "Feedback",         "#" %></li>
+        <li><%= link_to t('.about'),     about_path %></li>
+        <li><%= link_to t('.feedback'), 'javascript:FeedbackWindow()' %></li>
     </ul>
   </nav>
   <div class="hamburger" id="js-hamburger">

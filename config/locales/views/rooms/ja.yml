@@ -1,0 +1,10 @@
+ja:
+  rooms:
+    show:
+      staying_message:
+        zero:  '誰もいません'
+        one:   '%{count}人います'
+        other: '%{count}人います'
+      staying_message_max: '全員います'
+    edit:
+      confirm: '本当に削除してよろしいですか？'

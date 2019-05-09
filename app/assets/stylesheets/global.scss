@@ -20,8 +20,9 @@ body {
   background-color: $color-base;
 }
 
-a {
+* > a {
   text-decoration: none;
+  color: inherit;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -35,6 +36,14 @@ h1 {
 h2 {
   padding-left: 20px;
   margin-bottom: 10px;
+}
+
+section {
+  padding: 0 20px;
+  p {
+    font-size: 90%;
+    margin-bottom: 10px;
+  }
 }
 
 /************************
@@ -55,8 +64,8 @@ header {
   float: left;
   padding-left: 20px;
   line-height: 50px;
+  color: $color-text-light;
   a {
-    color: $color-text-light;
     font-size: 22px;
     font-weight: bold;
   }
@@ -69,8 +78,12 @@ header {
 footer {
   height: 30px;
   width: 100%;
+  color: $color-text-dark;
   background-color:$color-background-light;
-  color: white;
+  text-align: center;
+  a {
+    font-size: small;
+  }
 }
 
 /************************
@@ -97,8 +110,8 @@ div.room {
   //TODO:子要素もグレースケール効くので死ぬ
   &:before {
     content: '';
-    background:  image-url('room_sample.jpg') no-repeat center; //inherit;
-    filter: grayscale(80%);
+    background:  image-url('room_default.jpg') no-repeat center; //inherit;
+    filter: grayscale(80%) brightness(300%);
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -131,6 +144,20 @@ div.form form{
     display:block;
     margin-bottom: 20px;
     width: 100%;
+  }
+}
+
+div.error_explanation {
+  color: $color-text-error;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    li {
+      margin-top: 5px;
+      font-size: 0.8em;
+    }
   }
 }
 
@@ -220,10 +247,14 @@ input[type="password"] {
   }
 }
 
+input[type="image"][disabled] {
+  cursor:default;
+}
+
 // avatar
 .avatar {
   border-radius: 5px;
   &.not_staying{
-    filter: brightness(70%);
+    filter: grayscale(100%) brightness(70%);
   }
 }

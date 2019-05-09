@@ -1,8 +1,8 @@
-document.getElementById("count").innerHTML= "<%= pluralize(@room.users.where(is_staying: true).count, 'person') %> here."
+document.getElementById("count").innerHTML= "<%= escape_javascript(render('users/count')) %>"
 
 document.getElementById( "user_<%= @user.id %>" ).classList.remove("not_staying")
-document.getElementById( "edit_user_<%= @user.id %>" ).action = "<%= leave_room_user_path(@user.room_id, @user.id) %>"
+document.getElementById( "edit_user_<%= @user.id %>" ).action = "<%= leave_room_user_path(@user.room, @user) %>"
 
-GreetingToast('おかえりなさい')
+GreetingToast("<%= t('.message') %>")
 
 document.getElementById("activities_ul").innerHTML = "<%= escape_javascript(render(@room.activities[0..9])) %>"

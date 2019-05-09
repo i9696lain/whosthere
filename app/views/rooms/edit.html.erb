@@ -1,20 +1,14 @@
+<% provide(:form_url, room_path ) %>
+<% provide(:button_text, 'UPDATE') %>
 <main>
   <div class="container">
     <h1>Room Settings</h1>
   </div>
   <div class="container form">
-    <%= form_for(@room, url: room_path, html: { class: 'room' }) do |f| %>
- 
-    <%= f.label ":name", "Room's Name" %>
-    <%= f.text_field :name, class: 'form-control' %>
-  
-    <%= f.label :password, "Password" %>
-    <%= f.password_field :password, class: 'form-control' %>
-  
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-  
-    <%= f.submit "Update Room", class: "btn" %>
-  <% end %>
+    <%= render 'form' %>
+  </div>
+  <div class="container">
+    <%= link_to "DELETE ROOM", room_path(@room) , class: 'btn', method: :delete,
+                               data: { confirm: t('.confirm') } %>
   </div>
 </main>

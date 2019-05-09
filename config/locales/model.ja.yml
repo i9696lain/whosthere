@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      activity: アクティビティ
+      room: ルーム
+      user: ユーザ
+    attributes:
+      room:
+        name: ルーム名
+        password: パスワード
+      user:
+        name: ユーザ名

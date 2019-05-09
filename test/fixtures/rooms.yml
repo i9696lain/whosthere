@@ -3,7 +3,9 @@
 roundtable:
   name: Round Table
   password_digest: <%= Room.digest('password') %>
+  url_token: <%= SecureRandom.hex(10) %>
 
 seraph:
   name: SE.RA.PH
   password_digest: <%= Room.digest('password') %>
+  url_token: <%= SecureRandom.hex(10) %>

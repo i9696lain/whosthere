@@ -1,0 +1,13 @@
+ja:
+  layouts:
+    header:
+      share:    '共有リンクを取得'
+      home:     'ホーム'
+      user:     'ユーザ設定'
+      room:     'ルーム設定'
+      logout:   'ログアウト'
+      about:    'このサイトについて'
+      feedback: '要望・問題の報告'
+    footer:
+      terms:         '利用規約'
+      privacypolicy: 'プライバシーポリシー'

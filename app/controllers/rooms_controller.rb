@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room,     only: [:show,:edit,:update]
+  before_action :set_room,     only: [:show,:edit,:update,:destroy]
 
   def new
     @room = Room.new
@@ -29,10 +29,16 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    @room.destroy
+    log_out
+    redirect_to root_path
+  end
+
   private
 
     def set_room
-      @room = Room.find(params[:id])
+      @room = Room.find_by(url_token: params[:url_token])
       redirect_to(room_login_url(@room)) unless current_room?(@room)
     end
 

@@ -12,12 +12,14 @@ class ActivityTest < ActiveSupport::TestCase
     assert @user.valid?
     @activity.action = 2
     assert @user.valid?
+    @activity.action = 3
+    assert @user.valid?
   end
 
   test "action should be in the defined range of numbers" do
     @activity.action = 0
     assert_not @user.valid?
-    @activity.action = 3
+    @activity.action = 4
     assert_not @user.valid?
   end
 
