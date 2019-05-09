@@ -38,7 +38,7 @@ class RoomsController < ApplicationController
   private
 
     def set_room
-      @room = Room.find_by(url_token: params[:url_token])
+      @room = Room.find_by!(url_token: params[:url_token])
       redirect_to(room_login_url(@room)) unless current_room?(@room)
     end
 

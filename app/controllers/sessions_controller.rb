@@ -21,6 +21,6 @@ class SessionsController < ApplicationController
   private
 
     def set_room
-      @room = Room.find_by(url_token: params[:room_url_token])
+      @room = Room.find_by!(url_token: params[:room_url_token])
     end
 end
