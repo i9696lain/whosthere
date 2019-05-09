@@ -1,0 +1,153 @@
+*,
+*:before,
+*:after {
+ box-sizing:border-box;
+ margin:0px;
+ padding:0px
+}
+html {
+ font-family:sans-serif;
+ -ms-text-size-adjust:100%;
+ -webkit-text-size-adjust:100%
+}
+body {
+ background-color:#f4f4f4
+}
+*>a {
+ text-decoration:none;
+ color:inherit
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+ color:#788185
+}
+h1 {
+ text-align:center
+}
+h2 {
+ padding-left:20px;
+ margin-bottom:10px
+}
+section {
+ padding:0 20px
+}
+section p {
+ font-size:90%;
+ margin-bottom:10px
+}
+header {
+ position:fixed;
+ left:0px;
+ top:0px;
+ height:50px;
+ width:100%;
+ background-color:#788b91;
+ z-index:1
+}
+.header-logo {
+ float:left;
+ padding-left:20px;
+ line-height:50px;
+ color:white
+}
+.header-logo a {
+ font-size:22px;
+ font-weight:bold
+}
+footer {
+ height:30px;
+ width:100%;
+ color:#788185;
+ background-color:#d0d7dd;
+ text-align:center
+}
+footer a {
+ font-size:small
+}
+main {
+ max-width:600px;
+ min-height:calc(100vh - 30px);
+ margin:auto;
+ padding:50px 0 20px
+}
+div.container {
+ width:100%;
+ margin-top:20px
+}
+
+p.message {
+ font-size:large;
+ text-align:center
+}
+
+.header-nav {
+ position:fixed;
+ right:-320px;
+ top:0;
+ width:300px;
+ padding-top:50px;
+ transition:all .6s;
+ z-index:2
+}
+.header-nav ul {
+ margin:0;
+ padding:0;
+ list-style:none;
+ background-color:#788b91
+}
+.header-nav ul a {
+ display:block;
+ padding:8px 14px;
+ text-decoration:none;
+ color:white;
+ border-top:solid 2px #f4f4f4
+}
+.header-nav ul a:hover {
+ background-color:#b0bbbf
+}
+.hamburger {
+ position:absolute;
+ right:10px;
+ top:5px;
+ width:40px;
+ height:40px;
+ cursor:pointer;
+ z-index:3
+}
+.hamburger span {
+ position:absolute;
+ left:11px;
+ width:18px;
+ height:2px;
+ background-color:white;
+ transition:all .6s
+}
+.hamburger .hamburger_line1 {
+ top:14px
+}
+.hamburger .hamburger_line2 {
+ top:20px
+}
+.hamburger .hamburger_line3 {
+ top:26px
+}
+.nav-open .header-nav {
+ right:0
+}
+.nav-open .hamburger_line1 {
+ transform:rotate(45deg);
+ top:20px
+}
+.nav-open .hamburger_line2 {
+ width:0;
+ left:50%
+}
+.nav-open .hamburger_line3 {
+ transform:rotate(-45deg);
+ top:20px
+}
