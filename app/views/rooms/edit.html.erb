@@ -7,4 +7,8 @@
   <div class="container form">
     <%= render 'form' %>
   </div>
+  <div class="container">
+    <%= link_to "DELETE ROOM", room_path(@room) , class: 'btn', method: :delete,
+                               data: { confirm: t('.confirm') } %>
+  </div>
 </main>
