@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   before_action :set_room
 
   def new
+    @errors = []
   end
 
   def create
@@ -9,6 +10,7 @@ class SessionsController < ApplicationController
       log_in @room
       redirect_to @room
     else
+      @errors = [t('errors.messages.invalid_password')] 
       render 'new'
     end
   end

@@ -1,8 +1,8 @@
-<% if object.errors.any? %>
+<% if errors.any? %>
   <div class="error_explanation">
     <%= I18n.t('.errors.template.body') %>
     <ul>
-    <% object.errors.full_messages.each do |msg| %>
+    <% errors.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
