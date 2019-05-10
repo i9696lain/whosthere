@@ -6,6 +6,8 @@
   <div class="container form">
     <%= form_for(:session, url: room_login_path ) do |f| %>
 
+      <%= render 'layouts/error_messages', errors: @errors %>
+
       <%= f.label ":password", "Password" %>
       <%= f.password_field :password %>
 

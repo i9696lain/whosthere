@@ -1,6 +1,7 @@
 <%= form_for(@room, url: yield(:form_url), html: { class: 'room' }) do |f| %>
 
-  <%= render 'layouts/error_messages', object: f.object %>
+  <%#= render 'layouts/error_messages', object: f.object.errors %>
+  <%= render 'layouts/error_messages', errors: f.object.errors.full_messages %>
 
   <%= f.label ":name", "Room Name" %>
   <%= f.text_field :name, class: 'form-control' %>
