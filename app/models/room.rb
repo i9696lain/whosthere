@@ -6,7 +6,7 @@ class Room < ApplicationRecord
   validates :password, presence: true,
                        length: { minimum: 8},
                        allow_nil: true
-  attribute :url_token, :string, default: SecureRandom.hex(10)
+  attribute :url_token, :string
 
   def to_param
     url_token

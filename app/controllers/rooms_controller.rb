@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @room.url_token = SecureRandom.hex(10)
     if @room.save
       log_in @room
       redirect_to @room
